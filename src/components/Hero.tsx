@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroVideo from "@/assets/hero_vid.mp4";
+import heroVideo from "@/assets/drone_vid.mp4";
 import { Navbar } from "./Navbar";
 
 const Hero = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-60"
         >
           <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.
@@ -23,7 +23,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="max-w-4xl space-y-8 animate-fade-in">
+        <div className="max-w-4xl space-y-8">
           <h1 className="text-6xl md:text-8xl font-bold font-family-logo tracking-wider">
             <span className="text-foreground">Vyom</span>
             <span className="text-primary/85">Garud</span>
@@ -53,9 +53,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent z-10"></div>
     </section>
   );
 };

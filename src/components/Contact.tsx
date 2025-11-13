@@ -1,134 +1,108 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone,Send } from "lucide-react";
 import { useState } from "react";
-import { z } from "zod";
-
-const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100),
-  email: z.string().trim().email("Invalid email address").max(255),
-  organization: z.string().trim().max(100).optional(),
-  message: z.string().trim().min(1, "Message is required").max(1000),
-});
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     organization: "",
-    message: "",
+    message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      contactSchema.parse(formData);
-      setFormData({ name: "", email: "", organization: "", message: "" });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
-    <section id="contact" className="relative py-24 px-6 bg-secondary/30">
-      {/* Hexagonal Overlay */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%23ff7b00' stroke-width='1'/%3E%3C/svg%3E")`,
-          backgroundSize: "60px 60px",
-        }}
-      ></div>
-      <div className="container mx-auto max-w-6xl relative">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get in <span className="text-primary">Touch</span>
+    <section id="contact" className="relative py-20 px-6 bg-background overflow-hidden">
+      {/* Top Border */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="mb-16">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px flex-1 bg-border"></div>
+            <span className="tech-mono text-primary text-sm">
+              <Send className="mt-1" />
+            </span>
+            <div className="h-px flex-1 bg-border"></div>
+          </div>
+          
+          <h2 className="text-6xl md:text-7xl font-family-logo font-bold text-center mb-6">
+            Get In {" "}
+            <span className="text-primary">Touch</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          
+          <p className="tech-mono text-muted-foreground text-center">
             Ready to discuss your UAV requirements?
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-5 gap-1 bg-border p-1">
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="flex items-start space-x-4">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Mail className="h-6 w-6 text-primary" />
+          <div className="md:col-span-2 bg-card p-8 space-y-8">
+            <div className="space-y-6 md:flex md:flex-col md:justify-around h-full">
+              <div className="border-l-4 border-primary pl-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <h3 className="font-bold text-lg uppercase tracking-wider">Email</h3>
+                </div>
+                <p className="tech-mono text-muted-foreground text-base">contact@vyomgarud.com</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-1">Email</h3>
-                <p className="text-muted-foreground">contact@vyomgarud.com</p>
-              </div>
-            </div>
 
-            <div className="flex items-start space-x-4">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Phone className="h-6 w-6 text-primary" />
+              <div className="border-l-4 border-primary pl-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <Phone className="h-5 w-5 text-primary" />
+                  <h3 className="font-bold text-lg uppercase tracking-wider">Phone</h3>
+                </div>
+                <p className="tech-mono text-muted-foreground text-base">+91 (XXX) XXX-XXXX</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                <p className="text-muted-foreground">+91 (XXX) XXX-XXXX</p>
-              </div>
-            </div>
 
-            <div className="flex items-start space-x-4">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <MapPin className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-1">Location</h3>
-                <p className="text-muted-foreground">India</p>
+              <div className="border-l-4 border-primary pl-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <h3 className="font-bold text-lg uppercase tracking-wider">Location</h3>
+                </div>
+                <p className="tech-mono text-muted-foreground text-base">India</p>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form className="md:col-span-3 bg-card p-8 space-y-4 font-family-sans">
             <Input
-              placeholder="Name *"
+              placeholder="NAME *"
               value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              className="bg-background border-border"
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="bg-background border-2 border-border focus:border-primary tech-mono text-sm uppercase placeholder:text-muted-foreground"
               required
             />
             <Input
               type="email"
-              placeholder="Email *"
+              placeholder="EMAIL *"
               value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              className="bg-background border-border"
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="bg-background border-2 border-border focus:border-primary tech-mono text-sm uppercase placeholder:text-muted-foreground"
               required
             />
             <Input
-              placeholder="Organization"
+              placeholder="ORGANIZATION"
               value={formData.organization}
-              onChange={(e) =>
-                setFormData({ ...formData, organization: e.target.value })
-              }
-              className="bg-background border-border"
+              onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+              className="bg-background border-2 border-border focus:border-primary tech-mono text-sm uppercase placeholder:text-muted-foreground"
             />
             <Textarea
-              placeholder="Message *"
+              placeholder="MESSAGE *"
               value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-              className="bg-background border-border min-h-[150px]"
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              className="bg-background border-2 border-border focus:border-primary min-h-[150px] tech-mono text-sm placeholder:text-muted-foreground resize-none"
               required
             />
-            <Button
-              type="submit"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+            <Button 
+              type="submit" 
+              className="w-full bg-primary hover:bg-primary text-primary-foreground font-bold uppercase tracking-wider tech-mono border-2 border-primary hover:shadow-lg hover:shadow-primary/50 transition-all"
               size="lg"
             >
-              Send Message
+              SEND A MESSAGE
             </Button>
           </form>
         </div>

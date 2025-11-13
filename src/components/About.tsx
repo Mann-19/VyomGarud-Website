@@ -1,6 +1,7 @@
 const About = () => {
   return (
-    <section className="relative py-32 px-6 bg-card overflow-hidden">
+    <section className="relative py-32 px-6 bg-background overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-1 bg-muted-foreground/10"></div>
       {/* Geometric Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-64 h-64 border-4 border-primary rotate-45"></div>
@@ -37,7 +38,7 @@ const About = () => {
                 situational awareness and tactical advantage.
               </p>
               
-              <div className="bg-background border-l-4 border-muted-foreground p-6">
+              <div className="bg-card border-l-4 border-muted-foreground p-6">
                 <p className="text-foreground font-bold text-xl uppercase tracking-wide">
                   Built for professionals who demand excellence in every mission.
                 </p>
