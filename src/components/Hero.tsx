@@ -1,54 +1,54 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import heroDrone from "@/assets/hero-drone.jpg";
+import heroVideo from "@/assets/hero_vid.mp4";
+import { Navbar } from "./navbar";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-screen flex flex-col items-start justify-center overflow-hidden">
+      <Navbar />
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroDrone} 
-          alt="Advanced UAV System" 
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/60 to-background"></div>
+        >
+          <source src={heroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/60 to-background"></div> */}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-20 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
+      <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="max-w-4xl space-y-8 animate-fade-in">
+          <h1 className="text-5xl md:text-8xl font-bold tracking-tight">
             <span className="text-foreground">Vyom</span>
-            <span className="text-primary">Garud</span>
+            <span className="text-primary/85">Garud</span>
           </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto">
+
+          <p className="text-lg md:text-2xl text-muted-foreground font-light tracking-wide max-w-2xl">
             Military-Grade UAV Systems
             <br />
-            <span className="text-foreground">Precision Engineering • Advanced Autonomy • High Reliability</span>
+            <span className="text-foreground">
+              Precision Engineering • Advanced Autonomy • High Reliability
+            </span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg group"
-              onClick={scrollToContact}
+          <div className="flex flex-col sm:flex-row gap-4 pt-8">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-border hover:bg-secondary cursor-pointer text-foreground font-semibold px-8 py-6 text-lg backdrop-blur-lg"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
-              Get in Touch
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-border hover:bg-secondary text-foreground font-semibold px-8 py-6 text-lg"
-              onClick={() => document.getElementById('capabilities')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Explore Capabilities
+              Get in touch
             </Button>
           </div>
         </div>

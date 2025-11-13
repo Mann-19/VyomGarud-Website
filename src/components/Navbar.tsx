@@ -17,9 +17,9 @@ export function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
+    <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-white/5 backdrop-blur-lg font-family-sans text-white/70">
       <div className="container flex h-16 items-center justify-between">
-        <a href="/" className="font-bold text-lg">
+        <a href="/" className="font-bold text-lg ml-4">
           VyomGarud
         </a>
 
@@ -30,11 +30,10 @@ export function Navbar() {
               <a href={item.href}>{item.name}</a>
             </Button>
           ))}
-          <Button>Get Started</Button>
         </nav>
 
         {/* Mobile Menu (Sheet) */}
-        <div className="md:hidden">
+        <div className="md:hidden p-4">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">
@@ -44,7 +43,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>
-                <SheetTitle>MySite</SheetTitle>
+                <SheetTitle>VyomGarud</SheetTitle>
               </SheetHeader>
               <div className="grid gap-4 py-4">
                 {navItems.map((item) => (
@@ -52,7 +51,6 @@ export function Navbar() {
                     <a href={item.href}>{item.name}</a>
                   </Button>
                 ))}
-                <Button>Get Started</Button>
               </div>
             </SheetContent>
           </Sheet>

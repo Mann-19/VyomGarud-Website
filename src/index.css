@@ -116,11 +116,17 @@
 @layer base {
   * {
     @apply border-border;
+    -ms-overflow-style: none;
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    scrollbar-width: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   h1,
