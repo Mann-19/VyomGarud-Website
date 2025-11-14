@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# VyomGarud Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+VyomGarud is a modern, responsive website showcasing the capabilities of a UAV (Unmanned Aerial Vehicle) company. Built with cutting-edge technologies, it emphasizes performance, design, and accessibility.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Check out the live demo here: [VyomGarud Website](https://vyom-garud-website.vercel.app/)
 
-## React Compiler
+## GitHub Repository
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Explore the source code and commit history: [VyomGarud GitHub Repo](https://github.com/Mann-19/VyomGarud-Website)
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Strongly typed JavaScript for better developer experience
+- **Vite**: Fast build tool for modern web projects
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **Shadcn UI**: Accessible and customizable UI components
+- **Lucide Icons**: Icon library for modern web applications
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Design Choices
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Fonts
+- **Inter**: Used for body text and general typography, providing a clean and modern look.
+- **Bebas Neue**: Used for the logo and headings, offering a modern and impactful military grade style.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Color Palette
+- **Primary Color**: A vibrant orange hue (`hsl(24, 100%, 50%)`) used for accents and highlights.
+- **Background**: A dark, muted tone (`hsl(0, 0%, 8%)`) for a professional and sleek appearance.
+- **Foreground**: A light, almost white color (`hsl(0, 0%, 98%)`) for text and primary content.
+- **Muted Foreground**: A softer gray (`hsl(0, 0%, 65%)`) for secondary text.
+- **Glass Morphism**: Elements like the navbar and mobile menu feature a frosted glass effect with `bg-white/5` and `backdrop-blur-lg`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Layout
+- **Responsive Design**: The layout adapts seamlessly to both desktop and mobile devices.
+- **Grid System**: Utilized for sections like capabilities and contact to ensure content alignment and spacing.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Animations
+- **Hover Effects**: Buttons and cards feature subtle hover animations to enhance interactivity.
+- **Smooth Scrolling**: Anchor navigation is enhanced with smooth scrolling for a polished user experience.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Accessibility
+- **Semantic HTML**: Proper use of headings, landmarks, and ARIA roles to ensure inclusivity.
+- **Keyboard Navigation**: Fully navigable using a keyboard, with focus styles for interactive elements.
+
+## Setup Instructions
+
+Follow these steps to run the project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mann-19/VyomGarud-Website.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd VyomGarud-Website
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open the project in your browser at the URL provided by Vite (e.g., `http://localhost:5173`).
+
+## Screenshots / GIFs
+
+![VyomGarud Screenshot](https://via.placeholder.com/800x400.png?text=Screenshot+Placeholder)
+
+## Progressive Commit History
+
+The repository features a well-structured commit history to showcase the development process. Each commit represents a meaningful change, ensuring clarity and traceability.
+
+---
+
+## Contact
+
+- **Portfolio**: [mann-dev.netlify.app](https://mann-dev.netlify.app)
+- **Email**: [tech.mann.dev@gmail.com](mailto:tech.mann.dev@gmail.com)
+

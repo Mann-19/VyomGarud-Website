@@ -41,9 +41,14 @@ export function Navbar() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent
+              side="right"
+              className="bg-white/5 backdrop-blur-lg border border-black/10 text-white/70 font-family-sans"
+            >
               <SheetHeader>
-                <SheetTitle>VyomGarud</SheetTitle>
+                <SheetTitle className="font-bold font-family-logo tracking-widest text-2xl">
+                  Vyom<span className="text-primary">Garud</span>
+                </SheetTitle>
               </SheetHeader>
               <div className="grid gap-4 py-4">
                 {navItems.map((item) => (
