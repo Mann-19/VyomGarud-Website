@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-3xl tracking-widest font-bold font-family-logo">
               <span className="text-foreground">Vyom</span>
               <span className="text-primary">Garud</span>
             </h3>
