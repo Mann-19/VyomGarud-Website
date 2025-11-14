@@ -120,6 +120,9 @@
     @apply border-border;
     -ms-overflow-style: none;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
     @apply bg-background text-foreground;

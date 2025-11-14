@@ -11,16 +11,16 @@ import {
 
 export function Navbar() {
   const navItems = [
-    { name: "Our Capabilites", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Our Capabilites", href: "#capabilities" },
+    { name: "About Us", href: "#about" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-white/5 backdrop-blur-lg font-family-sans text-white/70">
       <div className="container flex h-16 items-center justify-between px-10">
-        <a href="/" className="font-bold font-family-logo tracking-widest text-lg">
-          VyomGarud
+        <a href="/" className="font-bold font-family-logo tracking-widest text-2xl">
+          Vyom<span className="text-primary">Garud</span>
         </a>
 
         {/* Desktop Navigation */}

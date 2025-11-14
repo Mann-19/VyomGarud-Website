@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <section className="relative py-32 px-6 bg-background overflow-hidden">
+    <section id="about" className="relative py-32 px-6 bg-background overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-muted-foreground/10"></div>
       {/* Geometric Background Elements */}
       <div className="absolute inset-0 opacity-5">
